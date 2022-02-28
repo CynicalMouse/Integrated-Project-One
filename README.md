@@ -15,6 +15,7 @@ To Play the current build, click [here](https://CynicalMouse.github.io/Integrate
   - Vertical and Horizontal 
     - Diagonal probably works but not tested  
 - Death and Respawn  
+  - Run into the block with a cross in it to die
 
 ## Bugs
 None that i know of currently
