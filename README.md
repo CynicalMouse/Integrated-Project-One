@@ -1,5 +1,7 @@
 # Integrated-Project-One
  
+To Play the current build, click [here](CynicalMouse.github.io/Integrated-Project-One/Builds/28-02-2022/index.html)
+ 
 ## Controls
 - WASD/Arrow Keys to move
 - Space to jump
