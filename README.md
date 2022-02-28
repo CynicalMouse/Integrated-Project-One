@@ -19,3 +19,4 @@ To Play the current build, click [here](https://CynicalMouse.github.io/Integrate
 
 ## Bugs
 You can walk off screen and have to reload (easy fix)
+If standing on the vertical moving block you can get squished 
