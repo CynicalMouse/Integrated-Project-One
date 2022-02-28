@@ -18,4 +18,4 @@ To Play the current build, click [here](https://CynicalMouse.github.io/Integrate
   - Run into the block with a cross in it to die
 
 ## Bugs
-None that i know of currently
+You can walk off screen and have to reload (easy fix)
