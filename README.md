@@ -7,6 +7,7 @@ To play the current build, click [here](https://CynicalMouse.github.io/Integrate
   
 ## New Features  
 - Basic Player following camera  
+  - Added Cinemachine Camera
 - Platforms that can be jumped through/ fallen through (press down to do so)  
 ## Curent Features  
 - Basic Movement  
