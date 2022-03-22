@@ -53,6 +53,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private bool alive = true;
 
+    // ANIMATION //
+    public Animator playerAnim;
+    public Animator healthAnim;
+    public Animator barAnim;
 
     // INITIAL SET UP //
     void Start()
@@ -116,6 +120,9 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(Mathf.Sign(inputX), 1, 1);
         }
+
+        // trigger sprite animation
+        Animation();
     }
     private bool IsGrounded()
     {
@@ -139,10 +146,9 @@ public class PlayerMovement : MonoBehaviour
         // when the player comes off the platform its parent is reset (no longer child of platform)
         transform.parent = _originalParent;
     }
-
+    
 
     //DEATH AND RESPAWN//
-        
     public void SetRespawnPoint (Vector2 position)
     {
         _respawnPoint = position;
@@ -170,5 +176,44 @@ public class PlayerMovement : MonoBehaviour
         alive = true;
         // allow collision
         _collider.enabled = true;
+
+        healthAnim.SetBool("IsAlive", true);
+        barAnim.SetBool("IsAlive", true);
+        playerAnim.SetBool("IsAlive", true);
+    }
+
+    //ANIMATION//
+    public void Animation()
+    {  
+        // Player Animation
+        if (Input.GetButtonDown("Jump"))
+        {
+            // enables the jump bool for the jump 1 & 2, disable falling animation entirely
+            playerAnim.SetBool("IsJumping", true);
+            playerAnim.SetBool("IsFalling", false);
+            if (jumpsLeft == 1)
+            {
+                playerAnim.SetTrigger("triggerJump1");
+            }
+
+            if (jumpsLeft == 0)
+            {
+                playerAnim.SetTrigger("triggerJump2");
+            }
+        }
+
+        if (IsGrounded() && _rigidbody.velocity.y <= 0)
+        {
+            // reset the jumping and falling bool, play only the, on ground animation
+            playerAnim.SetFloat("Speed", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
+            playerAnim.SetBool("IsJumping", false);
+            playerAnim.SetBool("IsFalling", false);
+        }
+
+        if (IsGrounded() == false && _rigidbody.velocity.y < -0.25)
+        {
+            // plays the fall animation when falling 
+            playerAnim.SetBool("IsFalling", true);
+        }
     }
 }
