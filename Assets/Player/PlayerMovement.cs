@@ -160,8 +160,6 @@ public class PlayerMovement : MonoBehaviour
         // disable collider
         _collider.enabled = false;
 
-        // put trigger for death animation here
-
         // begin respawning the player
         StartCoroutine(Respawn());
     }
