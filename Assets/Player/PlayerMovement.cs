@@ -48,6 +48,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private LayerMask collisionMask;
 
+    // used for collision with pick up blocks
+    [SerializeField]
+    private LayerMask PickUpcollisionMask;
+
     // DEATH AND RESPAWN //
     // used for death
     [SerializeField]
@@ -127,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded()
     {
         // check if grounded
-        return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionMask);
+        return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionMask | PickUpcollisionMask);
     }
 
 
@@ -159,6 +163,10 @@ public class PlayerMovement : MonoBehaviour
         alive = false;
         // disable collider
         _collider.enabled = false;
+
+        //If holding a block, drop it
+        var drop = gameObject.GetComponent<PlayerPickUpBlock>();
+        drop.DropObject();
 
         // begin respawning the player
         StartCoroutine(Respawn());
