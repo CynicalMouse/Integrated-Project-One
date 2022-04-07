@@ -4,6 +4,7 @@ To play the current build, click [here](https://CynicalMouse.github.io/Integrate
 ## Controls
 - WASD/Arrow Keys to move
 - Space to jump
+- E to pick up and put down
   
 ## New Features  
 - Basic Player following camera  
