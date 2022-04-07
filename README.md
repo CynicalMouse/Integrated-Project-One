@@ -5,6 +5,8 @@ To play the current build, click [here](https://CynicalMouse.github.io/Integrate
 - WASD/Arrow Keys to move
 - Space to jump
 - E to pick up and put down
+- C to attack
+  - Bit finicky, enemy has 3 hp
   
 ## New Features  
 - Basic Player following camera  
