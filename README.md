@@ -11,6 +11,7 @@ To play the current build, click [here](https://CynicalMouse.github.io/Integrate
 ## New Features  
 - Player Melee Attack
   - Press C to attack in front of player, no animation, enemy takes 3 hits, might be a bit finicky
+  - Enemy HP configurable in editor
 - Pick of object
   - Press E to pick up and throw an object, currently the box with a hand icon
   - Note: if it doenst look like its throwing it is because it is colliding with the area around you, move to a more open section
@@ -18,6 +19,7 @@ To play the current build, click [here](https://CynicalMouse.github.io/Integrate
   - Enemy which spawns projectile
   - Projectiles move towards player's location when it spawns
   - Projectile destroyed upon collision with anything
+  - Speed of and time between projectiles configurable in editor
   
 ## Curent Features  
 - Basic Movement  
