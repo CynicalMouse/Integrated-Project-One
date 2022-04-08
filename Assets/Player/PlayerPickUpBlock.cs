@@ -76,7 +76,7 @@ public class PlayerPickUpBlock : MonoBehaviour
         if (HeldItem)
         {
             //Place item infront of player
-            HeldItem.transform.position = PickUpPos.position;
+            //HeldItem.transform.position = PickUpPos.position;
 
             // remove item from player (no longer child of player)
             HeldItem.transform.parent = null;
@@ -85,8 +85,10 @@ public class PlayerPickUpBlock : MonoBehaviour
             if (HeldItem.GetComponent<Rigidbody2D>())
                 HeldItem.GetComponent<Rigidbody2D>().simulated = true;
 
-            // Throws Object DOESNT WORK IM LOSING MY MIND
-            //HeldItem.GetComponent<Rigidbody2D>().AddForce(ThrowDirection.position * ThrowPower, ForceMode2D.Impulse);
+
+
+            // Throws item DOESNT WORK IM LOSING MY MIND
+            HeldItem.GetComponent<Rigidbody2D>().AddForce(ThrowDirection.localPosition * ThrowPower, ForceMode2D.Impulse);
 
             // rest variable
             HeldItem = null;

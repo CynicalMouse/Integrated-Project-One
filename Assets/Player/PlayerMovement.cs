@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     private float groundCheckRadius = 0.05f;
 
 
+    [SerializeField]
+    public Transform ThrowDirection;
+
     //PLAYER ATTRIBUTES//
     //player speed
     [SerializeField]
@@ -123,6 +126,7 @@ public class PlayerMovement : MonoBehaviour
         if (inputX != 0)
         {
             transform.localScale = new Vector3(Mathf.Sign(inputX), 1, 1);
+            ThrowDirection.localPosition = new Vector3(Mathf.Sign(inputX), 1, 1);
         }
 
         // trigger sprite animation
