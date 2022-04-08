@@ -87,8 +87,33 @@ public class PlayerPickUpBlock : MonoBehaviour
 
 
 
-            // Throws item DOESNT WORK IM LOSING MY MIND
+            // Throws item
             HeldItem.GetComponent<Rigidbody2D>().AddForce(ThrowDirection.localPosition * ThrowPower, ForceMode2D.Impulse);
+
+            // rest variable
+            HeldItem = null;
+        }
+        else
+        {
+            // does nothing
+            return;
+        }
+    }
+
+    public void deathDropObject()
+    {
+        // additional if statement to fix dropping item on death
+        if (HeldItem)
+        {
+            //Place item infront of player
+            HeldItem.transform.position = PickUpPos.position;
+
+            // remove item from player (no longer child of player)
+            HeldItem.transform.parent = null;
+
+            //turn back on rigidbody
+            if (HeldItem.GetComponent<Rigidbody2D>())
+                HeldItem.GetComponent<Rigidbody2D>().simulated = true;
 
             // rest variable
             HeldItem = null;

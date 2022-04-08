@@ -170,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
 
         //If holding a block, drop it
         var drop = gameObject.GetComponent<PlayerPickUpBlock>();
-        drop.DropObject();
+        drop.deathDropObject();
 
         // begin respawning the player
         StartCoroutine(Respawn());
