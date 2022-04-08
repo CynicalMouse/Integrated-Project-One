@@ -4,7 +4,7 @@ To play the current build, click [here](https://CynicalMouse.github.io/Integrate
 ## Controls
 - WASD/Arrow Keys to move
 - Space to jump
-- E to pick up and put down
+- E to pick up and throw
 - C to attack
   - Bit finicky, enemy has 3 hp
   
@@ -38,3 +38,6 @@ To play the current build, click [here](https://CynicalMouse.github.io/Integrate
 
 ## Bugs
 - If standing on the vertical moving block you can get squished 
+- throw is easily hindered by surrounding terrain, bigger area or smaller block needed
+- animation gets a bit wonky near edge
+  - tried to fix by changing ground check from circle to rectangle but for somereason it broke everything so it remains a circle for now
