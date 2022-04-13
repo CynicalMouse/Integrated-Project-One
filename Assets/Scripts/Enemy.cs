@@ -58,8 +58,6 @@ public class Enemy : MonoBehaviour
         Debug.Log("damage taken");
     }
 
-
-
     private Transform GetNextPoint()
     {
         // increase by one to target next point

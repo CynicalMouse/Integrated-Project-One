@@ -1101,7 +1101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 533482217}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PickUpBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1418,7 +1418,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1060368717}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &672456504
 GameObject:
@@ -1840,36 +1840,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1250355506}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &768036585
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 768036586}
-  m_Layer: 0
-  m_Name: AttackPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &768036586
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768036585}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.772, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1060368717}
-  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &770748273
 GameObject:
@@ -2852,9 +2822,8 @@ GameObject:
   - component: {fileID: 1060368715}
   - component: {fileID: 1060368714}
   - component: {fileID: 1060368713}
-  - component: {fileID: 1060368718}
   - component: {fileID: 1060368719}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: < < Player > >
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2884,7 +2853,7 @@ MonoBehaviour:
     m_Bits: 64
   PickUpcollisionMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   alive: 1
   playerAnim: {fileID: 1557277811}
   healthAnim: {fileID: 1263039142}
@@ -3003,32 +2972,12 @@ Transform:
   - {fileID: 117747678}
   - {fileID: 109192496}
   - {fileID: 1224645139}
-  - {fileID: 768036586}
   - {fileID: 1338887757}
   - {fileID: 626749834}
   - {fileID: 1568348804}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1060368718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060368712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a41ec4b975abc47aecbfc07ef72a9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttackCooldownStart: 0.1
-  AttackPos: {fileID: 768036586}
-  AttackRange: 0.8
-  damage: 1
-  IsEnemy:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!114 &1060368719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4140,7 +4089,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1060368717}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1350807002
 GameObject:
@@ -12449,7 +12398,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1060368717}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1595606333
 GameObject:
@@ -13165,6 +13114,7 @@ GameObject:
   - component: {fileID: 1913347591}
   - component: {fileID: 1913347590}
   - component: {fileID: 1913347589}
+  - component: {fileID: 1913347592}
   m_Layer: 8
   m_Name: PickUpBlock
   m_TagString: Untagged
@@ -13285,6 +13235,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1913347592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913347587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e92d94379869749b8d03251a48b3ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
 --- !u!1 &1955919489
 GameObject:
   m_ObjectHideFlags: 0
