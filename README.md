@@ -1,25 +1,25 @@
 # Integrated-Project-One
  
-To play the current build, click [here](https://CynicalMouse.github.io/Integrated-Project-One/Builds/08-04-2022/index.html) (Last updated 08-04-2022)
+To play the current build, click [here](https://CynicalMouse.github.io/Integrated-Project-One/Builds/13-04-2022/index.html) (Last updated 13-04-2022)
 ## Controls
 - WASD/Arrow Keys to move
 - Space to jump
 - E to pick up and throw
-- C to attack
-  - Bit finicky, enemy has 3 hp
   
 ## New Features  
-- Player Melee Attack
-  - Press C to attack in front of player, no animation, enemy takes 3 hits, might be a bit finicky
-  - Enemy HP configurable in editor
 - Pick of object
   - Press E to pick up and throw an object, currently the box with a hand icon
+  - Does damage to enemy
+    - Enemy HP configurable in editor
   - Note: if it doenst look like its throwing it is because it is colliding with the area around you, move to a more open section
 - Enemy Projectile
   - Enemy which spawns projectile
   - Projectiles move towards player's location when it spawns
   - Projectile destroyed upon collision with anything
   - Speed of and time between projectiles configurable in editor
+
+## Changes
+- Removed player collision with throwable object
   
 ## Curent Features  
 - Basic Movement  
