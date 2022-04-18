@@ -1,7 +1,8 @@
 # Integrated-Project-One
  
-To play the current build, click [here](https://CynicalMouse.github.io/Integrated-Project-One/Builds/18-04-2022(WebGL)/index.html) (Last updated 18-04-2022)
-  SOME STUFF DOESNT WORK IN WEB VERSION, DOWNLOAD THE .EXE BUILD IN THE BUILDS FOLDER
+To play the current build, click [here](https://CynicalMouse.github.io/Integrated-Project-One/Builds/18-04-2022(WebGL)/index.html) (Last updated 18-04-2022)  
+    
+SOME STUFF DOESNT WORK IN WEB VERSION, DOWNLOAD THE .EXE BUILD IN THE BUILDS FOLDER
 ## Controls
 - WASD/Arrow Keys to move
 - Space to jump
