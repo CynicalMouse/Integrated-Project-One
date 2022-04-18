@@ -65,6 +65,9 @@ public class PlayerMovement : MonoBehaviour
     public Animator healthAnim;
     public Animator barAnim;
 
+    // flips sprite when going left
+    public SpriteRenderer spi;
+
     // INITIAL SET UP //
     void Start()
     {
@@ -125,8 +128,17 @@ public class PlayerMovement : MonoBehaviour
         // if the horizontal input = 0, flips character so it always looks the way its walking 
         if (inputX != 0)
         {
-            transform.localScale = new Vector3(Mathf.Sign(inputX), 1, 1);
+            //transform.localScale = new Vector3(Mathf.Sign(inputX), 1, 1);
             ThrowDirection.localPosition = new Vector3(Mathf.Sign(inputX), 1, 1);
+        }
+        if (inputX > 0)
+        {
+            spi.flipX = false;
+        }
+
+        if (inputX < 0)
+        {
+            spi.flipX = true;
         }
 
         // trigger sprite animation
