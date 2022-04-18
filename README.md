@@ -1,6 +1,6 @@
 # Integrated-Project-One
  
-To play the current build, click [here](https://CynicalMouse.github.io/Integrated-Project-One/Builds/13-04-2022/index.html) (Last updated 13-04-2022)
+To play the current build, click [here](https://CynicalMouse.github.io/Integrated-Project-One/Builds/18-04-2022/index.html) (Last updated 18-04-2022)
 ## Controls
 - WASD/Arrow Keys to move
 - Space to jump
@@ -22,6 +22,7 @@ To play the current build, click [here](https://CynicalMouse.github.io/Integrate
 - Removed player collision with throwable object
   
 ## Curent Features  
+- Pause Menu
 - Basic Movement  
 - Basic Player following camera  
 - Variable Jump Height 
