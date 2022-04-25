@@ -35700,6 +35700,7 @@ GameObject:
   - component: {fileID: 1060368715}
   - component: {fileID: 1060368714}
   - component: {fileID: 1060368713}
+  - component: {fileID: 1060368718}
   - component: {fileID: 1060368719}
   m_Layer: 0
   m_Name: < < Player > >
@@ -35736,7 +35737,6 @@ MonoBehaviour:
   playerAnim: {fileID: 1557277811}
   healthAnim: {fileID: 1263039142}
   barAnim: {fileID: 1978813399}
-  spi: {fileID: 1557277812}
 --- !u!61 &1060368714
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35860,6 +35860,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1060368718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060368712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a41ec4b975abc47aecbfc07ef72a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1060368719
 MonoBehaviour:
   m_ObjectHideFlags: 0

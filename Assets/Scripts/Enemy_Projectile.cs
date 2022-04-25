@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Enemy_Projectile : MonoBehaviour
 {
-    //how much damage the bullet does
-    [SerializeField]
-    public float damage;
+    //how much damage the bullet does  // Jason - at the moment it only deal one damage
+    //[SerializeField]
+    //public float damage;
 
     // speed of bullet
     [SerializeField]
@@ -36,9 +36,21 @@ public class Enemy_Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //check if collided object is player
+        var player = collision.collider.GetComponent<PlayerMovement>();
+
+        if (player != null)
+        {
+            // damage the player
+            player.Damaged();               
+        }
 
         // destroys projectile if it hits anything
         Destroy(gameObject);
     }
+
+    
+        
+    
 
 }

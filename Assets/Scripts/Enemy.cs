@@ -28,10 +28,15 @@ public class Enemy : MonoBehaviour
     private Transform targetPoint;
     private int targetPointIndex = 0;
 
+    // Used to flip sprite 
+    private SpriteRenderer spr;
+
     void Start()
     {
         // target first point
         targetPoint = _points[0];
+
+        spr = gameObject.GetComponent<SpriteRenderer>();
     }
     void Update()
     {
@@ -50,6 +55,17 @@ public class Enemy : MonoBehaviour
         {
             targetPoint = GetNextPoint();
         }
+        
+      
+        if (transform.position.x < targetPoint.position.x)
+        {
+            spr.flipX = true;
+        }
+        if (transform.position.x > targetPoint.position.x)
+        {
+            spr.flipX = false;
+        }
+        
     }
 
     public void TakeDamage(int damage)

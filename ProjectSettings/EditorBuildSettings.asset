@@ -11,10 +11,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Metroid Zone.unity
     guid: c8b435d80af9721498c2d9791d3c9001
-  - enabled: 1
-    path: Assets/Scenes/Level 1 - Inferior Lobe.unity
-    guid: d1d42c5bef520fb49bee8261ab6d07aa
-  - enabled: 0
-    path: Assets/Scenes/Options.unity
-    guid: 7c2a83cf7ae3e5244bba1221932e75fc
   m_configObjects: {}

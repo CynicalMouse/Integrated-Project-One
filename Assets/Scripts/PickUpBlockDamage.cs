@@ -7,7 +7,41 @@ public class PickUpBlockDamage : MonoBehaviour
     // How much damage is dealt
     [SerializeField]
     public int damage;
+    
+    private float speed;
 
+    public Animator whiteCellAnim;
+
+    void Start()
+    {
+        StartCoroutine(CalcSpeed());
+    }
+
+    IEnumerator CalcSpeed()
+    {
+        bool isPlaying = true;
+
+        while (isPlaying)
+        {
+            Vector3 prevPos = transform.localPosition;
+
+            yield return new WaitForFixedUpdate();
+
+            speed = Mathf.RoundToInt(Vector3.Distance(transform.localPosition, prevPos) / Time.fixedDeltaTime);
+
+            if (speed > 0)
+            {
+            whiteCellAnim.SetFloat("Speed", speed);
+            }
+
+            if (speed == 0)
+            {
+            whiteCellAnim.SetFloat("Speed", speed);
+            }
+        }
+
+        
+    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -15,9 +49,12 @@ public class PickUpBlockDamage : MonoBehaviour
         var target = other.collider.GetComponent<Enemy>();
         if (target != null)
         {
-            //deasl damage
+            //deals damage
             target.GetComponent<Enemy>().TakeDamage(damage);
+
+            Destroy(gameObject);
         }
     }
 
+   
 }

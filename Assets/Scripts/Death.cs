@@ -17,7 +17,7 @@ public class Death : MonoBehaviour
         if (player != null)
         {
             // kill the player
-            player.Death();
+            player.Damaged();
 
             // sets their health to zero
             healthAnim.SetBool("IsAlive", false);

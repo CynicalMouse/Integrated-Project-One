@@ -55,6 +55,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private LayerMask PickUpcollisionMask;
 
+    // HEALTH AND DAMAGE //
+    // used for player healthbar
+    public float Health = 5f;
+
     // DEATH AND RESPAWN //
     // used for death
     [SerializeField]
@@ -173,19 +177,29 @@ public class PlayerMovement : MonoBehaviour
     {
         _respawnPoint = position;
     }
-    public void Death()
+    public void Damaged()
     {
-        // death
-        alive = false;
-        // disable collider
-        _collider.enabled = false;
+        if (Health > 0)
+        {
+            Health = Health - 1;
+            playerAnim.SetTrigger("triggerHurt");
+        }
+        // kills the player
+        if (Health == 0)
+        {
+            // death
+            alive = false;
+            playerAnim.SetBool("IsAlive", false);
+            // disable collider
+            _collider.enabled = false;
 
-        //If holding a block, drop it
-        var drop = gameObject.GetComponent<PlayerPickUpBlock>();
-        drop.deathDropObject();
+            //If holding a block, drop it
+            var drop = gameObject.GetComponent<PlayerPickUpBlock>();
+            drop.deathDropObject();
 
-        // begin respawning the player
-        StartCoroutine(Respawn());
+            // begin respawning the player
+            StartCoroutine(Respawn());
+        }
     }
 
     private IEnumerator Respawn()
@@ -194,13 +208,13 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(1f);
         // move player to respawn point
         transform.position = _respawnPoint;
+        // reset health to 100
+        Health = 5f;
+
         // allow movement
         alive = true;
         // allow collision
         _collider.enabled = true;
-
-        healthAnim.SetBool("IsAlive", true);
-        barAnim.SetBool("IsAlive", true);
         playerAnim.SetBool("IsAlive", true);
     }
 

@@ -28,11 +28,13 @@ public class PlayerPickUpBlock : MonoBehaviour
     [SerializeField]
     private Transform ThrowDirection;
 
+    public Animator playerCarryAnim;
+
     void Update()
     {
 
         //Key Input
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             //Drop held item
             if(HeldItem)
@@ -66,7 +68,9 @@ public class PlayerPickUpBlock : MonoBehaviour
             if (HeldItem.GetComponent<Rigidbody2D>())
                 HeldItem.GetComponent<Rigidbody2D>().simulated = false;
 
-
+            // plays animation of picking up the object 
+            playerCarryAnim.SetBool("IsCarry", true);
+            playerCarryAnim.SetTrigger("triggerPickup");
         }
     }
 
@@ -92,6 +96,10 @@ public class PlayerPickUpBlock : MonoBehaviour
 
             // rest variable
             HeldItem = null;
+
+            // plays animation of drop/throwing the object 
+            playerCarryAnim.SetBool("IsCarry", false);
+            playerCarryAnim.SetTrigger("triggerThrow");
         }
         else
         {
